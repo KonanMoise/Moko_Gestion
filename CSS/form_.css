@@ -84,16 +84,17 @@ form {
 }
 
 input {
-	background-color: #B36458;
+	background-color: #FCFDFE;
     opacity: .7;
-	border: none;
+	border: 1px solid #B36458;
+	border-radius: 5px;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
 }
 
 input::placeholder{
-    color: #fff;
+    color: #353E55;
 }
 
 button.ghost {
@@ -138,6 +139,10 @@ button:active {
 	border-radius: 50%;
 	background-color: #B36458;
 	border: 1px solid rgba(0, 32, 63, .45);
+}
+
+.social-container .fab{
+	color: #fff;
 }
 
 h1 {

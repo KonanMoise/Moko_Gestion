@@ -1,16 +1,59 @@
 
-const menuIcon = document.querySelector('.menu-icon')
-const sidebar = document.querySelector('#sidebar')
+const menuIcon = document.querySelector('.menu-icon');
+const sidebar = document.querySelector('#sidebar');
+const header = document.querySelector('.header');
 
+const countEmployee = document.querySelector('.box .count_user')
+const nomDuConect = document.querySelector('.nom_du_conect')
+
+function getEmployee() {
+  return JSON.parse(localStorage.getItem('employee'))
+}
+
+function getAdmin() {
+  return JSON.parse(localStorage.getItem('admin'))
+}
+
+function setCount(count) {
+  countEmployee.innerHTML = count
+}
+
+function setNomAdminConect(nom) {
+  nom.forEach(element => {
+    nomDuConect.innerHTML = element["username"]
+  });
+  
+}
+
+let nomAdmin = getAdmin()
+let employee = getEmployee()
+setCount(employee.length)
+setNomAdminConect(nomAdmin)
+
+
+
+// ************responsive-sidebar
 menuIcon.addEventListener('click', toggleSidebar)
 
 function toggleSidebar(){
-  if (sidebar.classList.contains(''))
+  if (sidebar.classList.contains('sidebar-responsive')) {
+    sidebar.classList.remove('sidebar-responsive')
+    menuIcon.querySelector('span').innerText = 'keyboard_double_arrow_right';
+    header.classList.remove('header -responsive')
+  } else{ 
+    sidebar.classList.add('sidebar-responsive')
+    menuIcon.querySelector('span').innerText = 'menu';
+    header.classList.add('header -responsive')
+  }
 }
 
+
+
+
+// Tab des statistiques
 let options = {
     series: [{
-    data: [400, 430, 448, 470, 1380]
+    data: [1100, 530, 648, 870, 1380]
   }],
     chart: {
     type: 'bar',
@@ -99,7 +142,7 @@ let options2 = {
   },
   yaxis: {
     title: {
-      text: 'Quatité',
+      text: 'Quantité',
     },
     min: 0
   },
