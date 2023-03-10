@@ -20,7 +20,9 @@ function setCount(count) {
 
 function setNomAdminConect(nom) {
   nom.forEach(element => {
-    nomDuConect.innerHTML = element["username"]
+    if (element["super"] === true){
+      nomDuConect.innerHTML = element["username"]
+    }
   });
   
 }

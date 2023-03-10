@@ -296,11 +296,10 @@ ul li a:hover::after {
 .main-title{
 	display: flex;
 	justify-content: space-between;
+	margin-left: 3rem;
+	margin-bottom: 2rem;
 }
 
-.main-title > p{
-	font-size: 20px;
-}
 
 .box-container {
 	display: flex;
@@ -393,6 +392,7 @@ ul li a:hover::after {
 }
 .fw-600{
 	font-weight: 600;
+	font-size: 2rem;
 }
 
 .fw-200{
@@ -418,6 +418,10 @@ ul li a:hover::after {
 	.grid-container{
 		grid-template-columns: 120px 1fr;
 		grid-template-areas: 'sidebar header' 'sidebar main';
+	}
+
+	#sidebar{
+		width: 20%;
 	}
 
 	.sidebar-brand > img{
@@ -446,7 +450,7 @@ ul li a:hover::after {
 
 	.sidebar-list-item > :not(.label-item),
 	.sidebar-brand > :not(.label-title){
-		font-size: 36px;
+		font-size: 16px;
 	}
 }
 
@@ -462,6 +466,28 @@ ul li a:hover::after {
 	.sidebar-brand > img{
 		width: 100%;
 	}
+
+	.main-title{
+		display: flex;
+		justify-content: space-between;
+		margin-left: 1rem;
+		margin-bottom: .2rem;
+	}
+	
+	.main-title > p{
+		font-size: 1.5rem;
+	}
+	
+	.box-container {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 50px;
+		margin: 70px auto;
+	}
+	
+	
 
 	.card-inner > span{
 		display: block;
@@ -549,13 +575,14 @@ ul li a:hover::after {
 /* =========== START PAGE EMPLOYEE =========== */
 
 .main-ajout{
-	margin: 10px;
+	margin: 3rem;
 }
 
 .table-employ{
 	width: 90%;
 	border-collapse: collapse;
-	margin-left: 20px;
+	margin-left: 3rem;
+	box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.4);
 }
 
 .table-employ > thead > tr{
@@ -570,7 +597,7 @@ th, td{
 }
 
 th{
-	background-color: #000;
+	background-color: #b36458a1;
 	color: #fff;
 }
 
@@ -702,9 +729,9 @@ tr:nth-child(odd){
   }
   
   .delete-btn {
-	background-color: red;
+	background-color: rgba(224, 86, 86, 0.714);
 	color: white;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	padding: 5px 15px;
 	cursor: pointer;
   }
@@ -759,15 +786,33 @@ tr:nth-child(odd){
   }
 
 /* ========= employee.RESPONSIVE =========== */
+@media screen and (max-width: 968px){
+	#sidebar{
+		width: 15%;
+	}
+	.sidebar-list-item > a{
+		display: none;
+	}
+}
+
+
+@media screen and (max-width: 767px){
+	.box-table{
+		margin-left: -4rem;
+		width: 100%;
+	}
+}
+
 
 @media screen and (max-width: 700px) {
 
 	.main-ajout{
-		margin: 10px;
+		margin-left: 3rem;
 	}
 
 	.table-employ, thead, tbody, tr, th, td{
 		display: block;
+		width: 100%;
 	}
 
 	td{

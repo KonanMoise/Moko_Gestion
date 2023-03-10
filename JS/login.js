@@ -25,8 +25,9 @@ form.addEventListener('submit', (e) =>{
 
     console.log(typeof result)
     if (typeof result !== "undefined"){
-        window.location.href = "dashboard.html"
         alert("Vos informations sont correct !")
+        window.location.href = "dashboard.html"
+        // localStorage.setItem('session', JSON.stringify())
         console.log(typeof result)
     }
     else{

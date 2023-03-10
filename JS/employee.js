@@ -16,7 +16,7 @@ const table = document.querySelector('.table-employ')
 const tblBody = document.querySelector('.table-employ tbody')
 const boxTable = document.querySelector('.box-table')
 
-// function counter
+// // function counter
 // function setCount(count) {
 //   countEmployee.innerHTML = count
 // }
@@ -72,7 +72,7 @@ deleteButton.forEach(function (button) {
       (contact) => contact.telephone !== telephone
     )
     employee = filteredEmployee
-    setCount(employee.length)
+    // setCount(employee.length)
     setEmployee(employee)
   })
 })
@@ -185,4 +185,30 @@ addEmployeButton.onclick = function (event) {
   modal.style.display = 'none'
 }
 // setCount(employee.length)
+
+
+
+const menuIcon = document.querySelector('.menu-icon');
+const sidebar = document.querySelector('#sidebar');
+const header = document.querySelector('.header');
+
+const countEmployee = document.querySelector('.box .count_user')
+const nomDuConect = document.querySelector('.nom_du_conect')
+
+
+function getAdmin() {
+  return JSON.parse(localStorage.getItem('admin'))
+}
+
+function setNomAdminConect(nom) {
+  nom.forEach(element => {
+    if (element["super"] === true){
+      nomDuConect.innerHTML = element["username"]
+    }
+  });
+  
+}
+
+let nomAdmin = getAdmin()
+setNomAdminConect(nomAdmin)
   
